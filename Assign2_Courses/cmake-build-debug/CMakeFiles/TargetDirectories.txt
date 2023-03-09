@@ -1,0 +1,3 @@
+C:/Users/sarah/Desktop/sarah/nscc/winter2023/PROG2100/Assign2_Courses/cmake-build-debug/CMakeFiles/Assign2_Courses.dir
+C:/Users/sarah/Desktop/sarah/nscc/winter2023/PROG2100/Assign2_Courses/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/sarah/Desktop/sarah/nscc/winter2023/PROG2100/Assign2_Courses/cmake-build-debug/CMakeFiles/rebuild_cache.dir
