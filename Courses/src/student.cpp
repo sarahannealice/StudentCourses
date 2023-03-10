@@ -31,7 +31,7 @@ void Student::addCourse(string courseName) {
         //sets last element of dynamic array to most recent inputted course
         courseList[numCourses] = courseName;
     }
-}
+}//end addCourse method
 
 void Student::printCourses() const {
     cout << "student courses: " << endl;
@@ -42,10 +42,10 @@ void Student::printCourses() const {
             cout << courseList[i] << endl;
         }
     }
-}
+}//end printCourses method
 
 //assignment operator -- https://www.geeksforgeeks.org/operator-overloading-cpp/
-//a method which overrides an operator into copying a Student object completely
+//a method which overrides the '=' operator into copying a Student object completely
 Student& Student::operator=(Student &initialStudent) {
     name = initialStudent.name;
     numCourses = initialStudent.numCourses;
@@ -55,4 +55,4 @@ Student& Student::operator=(Student &initialStudent) {
     cout << "assignment operator called" << endl;
 
     return *this;
-}
+}//end assignment operator method

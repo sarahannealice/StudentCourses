@@ -34,7 +34,7 @@ int main() {
             } else {
                 break;
             }
-        }
+        }//end name validation
 
         Student studentOne;
         studentOne.setName(input);
@@ -61,7 +61,7 @@ int main() {
                 studentOne.setNumCourses(numCourses += 1);//increments dynamic array
                 studentOne.addCourse(input);
             }
-        }
+        }//end addition to course array loop
 
         //print statements
         cout << "--------------------------------" << endl;
@@ -82,7 +82,7 @@ int main() {
             } else {
                 break;
             }
-        }
+        }//end name validation
 
         Student studentTwo = studentOne;//copies studentOne info
         studentTwo.setName(input);//sets name but keeps courseList untouched
@@ -106,7 +106,7 @@ int main() {
             } else {
                 break;
             }
-        }
+        }//end name validation
 
         Student studentThree = studentTwo;//copies studentOne info
 
@@ -118,7 +118,7 @@ int main() {
 
 
         loopProgram = false;
-    }
+    }//end program loop
 
     return 0;
 }//end main method

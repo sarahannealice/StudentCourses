@@ -36,10 +36,11 @@ public:
         cout << "copy constructor called" << endl;
     }
 
-    //destructor
+    //destructor -- '~' signifies destructor
     ~Student() {
         //checks to see if dynamic array is null
         //if not null -> destroys, if null -> returns
+        //note: deleting a null array will throw an error (bad)
         if (courseList) {
             delete []courseList;
             courseList = {};//resets to empty
@@ -60,9 +61,7 @@ public:
 
     //methods to be implemented in student.cpp
     void addCourse(string courseName);
-
     void printCourses() const;
-
     Student& operator= (Student& initialStudent);
 
 };//end Student class
