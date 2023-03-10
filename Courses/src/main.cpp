@@ -55,7 +55,7 @@ int main() {
             if (input == "q" || input == "Q") {
                 addCourse = false;
             } else {
-                numCourses++;
+                studentOne.setNumCourses(numCourses += 1);
                 studentOne.addCourse(input);
                 studentOne.printCourses();
             }
