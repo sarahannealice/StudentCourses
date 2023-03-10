@@ -15,21 +15,21 @@ void Student::addCourse(string courseName) {
 
     string *temp = new string[numCourses];//create temporary array with new size
 
-    /*
-    for (int i = 0; i < temp->size(); i++) {
+    for (int i = 0; i < numCourses; i++) {
         temp[i] = courseList[i];
+        cout << "course list: " << courseList[i] << endl;//prints
+        cout << "temp: " << temp[i];//doesn't print
     }
-     */
 
-    copy(courseList, courseList + (courseList->size()), temp);
+    for (int i = 0; i < numCourses; i++) {
+        cout << "temp: " << temp[i] << endl;
+    }
+
     delete []courseList;//deletes values in courseList array
     courseList = temp;//sets courseList equal to temp array
     delete []temp;//deletes values in temp array for next iteration of addCourse()
 
-    courseList[this->numCourses - 1] = courseName;//adds new course to end of array
-    for (int i = 0; i < numCourses; i++) {
-        cout << "courseList: " << courseList[i] << endl;
-    }
+    courseList[numCourses - 1] = courseName;//adds new course to end of array
 }
 
 void Student::printCourses() const {

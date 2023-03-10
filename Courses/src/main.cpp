@@ -15,7 +15,6 @@ int main() {
     string input;
     bool addCourse = true;
     bool loopProgram = true;
-    int numCourses = 0;
 
     while (loopProgram) {
         //taking user input
@@ -33,15 +32,13 @@ int main() {
             if (input == "q" || input == "Q") {
                 addCourse = false;
             } else {
-                numCourses++;
-                cout << "main: " << numCourses << endl;
                 studentOne.addCourse(input);
-                //studentOne.printCourses();
+                studentOne.printCourses();
             }
         }
 
         cout << "student 1: " + studentOne.getName() << endl;
-        cout << "number of courses: " << numCourses << endl;
+        cout << "number of courses: " << studentOne.getNumCourses() << endl;
         studentOne.printCourses();
 
         cout << "you have finished student one";

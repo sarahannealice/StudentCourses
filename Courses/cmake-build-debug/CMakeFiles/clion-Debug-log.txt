@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2022.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.3/bin/ninja/win/x64/ninja.exe" -G Ninja -S D:\sarah\nscc\winter2023\PROG2100\Courses -B D:\sarah\nscc\winter2023\PROG2100\Courses\cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2022.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S C:\Users\sarah\Desktop\sarah\nscc\winter2023\PROG2100\Assign2_Courses\Courses -B C:\Users\sarah\Desktop\sarah\nscc\winter2023\PROG2100\Assign2_Courses\Courses\cmake-build-debug
 -- Configuring done
 -- Generating done
--- Build files have been written to: D:/sarah/nscc/winter2023/PROG2100/Courses/cmake-build-debug
+-- Build files have been written to: C:/Users/sarah/Desktop/sarah/nscc/winter2023/PROG2100/Assign2_Courses/Courses/cmake-build-debug

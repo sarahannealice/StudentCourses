@@ -12,8 +12,7 @@ using namespace std;
 //class definition should be added to header file
 class Student {
 
-public
-:
+private:
     string name;
     int numCourses;
     string *courseList;
@@ -47,12 +46,16 @@ public:
     }
 
     //setter & getter
-    std::string getName() {
+    string getName() {
         return this->name;
     }
 
     void setName(string name) {
         this->name = name;
+    }
+
+    int getNumCourses() {
+        return this->numCourses;
     }
 
     void addCourse(string courseName);

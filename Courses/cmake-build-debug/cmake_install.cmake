@@ -1,4 +1,4 @@
-# Install script for directory: D:/sarah/nscc/winter2023/PROG2100/Courses
+# Install script for directory: C:/Users/sarah/Desktop/sarah/nscc/winter2023/PROG2100/Assign2_Courses/Courses
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/sarah/nscc/winter2023/PROG2100/Courses/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/sarah/Desktop/sarah/nscc/winter2023/PROG2100/Assign2_Courses/Courses/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
