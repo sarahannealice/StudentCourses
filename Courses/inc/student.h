@@ -22,7 +22,7 @@ public:
     Student(){
         name = "";
         numCourses = 0;
-        courseList = new string[0];
+        courseList = new string[numCourses];
     }
 
     //copy constructor
@@ -46,12 +46,16 @@ public:
     }
 
     //setter & getter
+    void setName(string name) {
+        this->name = name;
+    }
+
     string getName() {
         return this->name;
     }
 
-    void setName(string name) {
-        this->name = name;
+    void setNumCourses(int num) {
+        this->numCourses = num;
     }
 
     int getNumCourses() {

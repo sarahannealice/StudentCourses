@@ -10,26 +10,30 @@ using namespace std;
 
 //resizes and adds new course to course list
 void Student::addCourse(string courseName) {
-    numCourses += 1;//adds 1 index to previous array size
-    cout << "student: " << numCourses << endl;
+    //check to see if first element in array
+    if (numCourses == 0) {
+        courseList[0] = courseName;
+        return;
+    } else {
+        this->numCourses += 1;//adds 1 index to previous array size
+        cout << numCourses << endl;
 
-    string *temp = new string[numCourses];//create temporary array with new size
+        //resizing dynamic array for potential additional course
+        string *temp = new string[numCourses];//create temporary array with new size
 
-    for (int i = 0; i < numCourses; i++) {
-        temp[i] = courseList[i];
-        cout << "course list: " << courseList[i] << endl;//prints
-        cout << "temp: " << temp[i];//doesn't print
+        //deep copy of array to temporary array
+        for (int i = 0; i < numCourses; i++) {
+            temp[i] = courseList[i];
+        }
+
+        delete []courseList;//deletes values in courseList array
+        courseList = temp;//sets fresh courseList equal to temp array
+        delete []temp;//deletes values in temp array for next iteration of addCourse()
+        //sets last element of dynamic array to most recent inputted course
+        courseList[numCourses-1] = courseName;
     }
 
-    for (int i = 0; i < numCourses; i++) {
-        cout << "temp: " << temp[i] << endl;
-    }
 
-    delete []courseList;//deletes values in courseList array
-    courseList = temp;//sets courseList equal to temp array
-    delete []temp;//deletes values in temp array for next iteration of addCourse()
-
-    courseList[numCourses - 1] = courseName;//adds new course to end of array
 }
 
 void Student::printCourses() const {
