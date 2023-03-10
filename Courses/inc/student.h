@@ -23,7 +23,7 @@ public:
         name = "";
         numCourses = 0;
         courseList = new string[numCourses];
-        //cout << "default constructor called" << endl;
+        cout << "---default constructor called---" << endl;
     }
 
     //copy constructor
@@ -33,7 +33,7 @@ public:
         courseList = new string[numCourses];
         copy(initialStudent.courseList, initialStudent.courseList + numCourses, courseList);
 
-        cout << "copy constructor called" << endl;
+        cout << "---copy constructor called---" << endl;
     }
 
     //destructor -- '~' signifies destructor
@@ -48,7 +48,7 @@ public:
             return;
         }
 
-        cout << "destructor called" << endl;
+        cout << "---destructor called---" << endl;
     }
 
 
@@ -62,6 +62,7 @@ public:
     //methods to be implemented in student.cpp
     void addCourse(string courseName);
     void printCourses() const;
+    void courseReset();
     Student& operator= (Student& initialStudent);
 
 };//end Student class

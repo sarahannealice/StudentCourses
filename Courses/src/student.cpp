@@ -44,6 +44,13 @@ void Student::printCourses() const {
     }
 }//end printCourses method
 
+//method to reset courseNum and courseList to 0
+void Student::courseReset() {
+    setNumCourses(0);
+    delete []courseList;
+    courseList = {};
+}
+
 //assignment operator -- https://www.geeksforgeeks.org/operator-overloading-cpp/
 //a method which overrides the '=' operator into copying a Student object completely
 Student& Student::operator=(Student &initialStudent) {

@@ -19,7 +19,7 @@ int main() {
 
     while (loopProgram) {
         //taking user input
-        cout << "***start of program***" << endl;
+        cout << endl << "***start of program***" << endl << endl;
 
 
         //*****student one*****//
@@ -65,7 +65,7 @@ int main() {
 
         //print statements
         cout << "--------------------------------" << endl;
-        cout << "student 1: " + studentOne.getName() << endl;
+        cout << "student 1: " << studentOne.getName() << endl;
         cout << "number of courses: " << studentOne.getNumCourses() << endl;
         studentOne.printCourses();
 
@@ -92,6 +92,11 @@ int main() {
         cout << "student 2: " + studentTwo.getName() << endl;
         cout << "number of courses: " << studentTwo.getNumCourses() << endl;
         studentTwo.printCourses();
+
+        cout << "student 1 after reset: " << studentOne.getName() << endl;
+        studentOne.courseReset();
+        cout << "number of courses: " << studentOne.getNumCourses() << endl;
+        studentOne.printCourses();
 
 
         //*****third student*****//
