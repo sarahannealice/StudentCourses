@@ -43,3 +43,16 @@ void Student::printCourses() const {
         }
     }
 }
+
+//assignment operator -- https://www.geeksforgeeks.org/operator-overloading-cpp/
+//a method which overrides an operator into copying a Student object completely
+Student& Student::operator=(Student &initialStudent) {
+    name = initialStudent.name;
+    numCourses = initialStudent.numCourses;
+
+    string *temp = new string[numCourses];
+    copy(initialStudent.courseList, initialStudent.courseList + initialStudent.numCourses, temp);
+    cout << "assignment operator called" << endl;
+
+    return *this;
+}

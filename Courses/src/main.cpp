@@ -20,6 +20,9 @@ int main() {
     while (loopProgram) {
         //taking user input
         cout << "***start of program***" << endl;
+
+
+        //*****student one*****//
         cout << "enter first student's name: ";
         getline(cin, input);
 
@@ -55,17 +58,64 @@ int main() {
             if (input == "q" || input == "Q") {
                 addCourse = false;
             } else {
-                studentOne.setNumCourses(numCourses += 1);
+                studentOne.setNumCourses(numCourses += 1);//increments dynamic array
                 studentOne.addCourse(input);
-                studentOne.printCourses();
             }
         }
 
+        //print statements
+        cout << "--------------------------------" << endl;
         cout << "student 1: " + studentOne.getName() << endl;
         cout << "number of courses: " << studentOne.getNumCourses() << endl;
         studentOne.printCourses();
 
-        cout << "you have finished student one";
+
+        //*****second student*****//
+        cout << "enter second student's name: ";
+        getline(cin, input);
+
+        //makes sure user inputs something
+        while (true) {
+            if (input.empty()) {
+                cout << "please input a name: ";
+                getline(cin, input);
+            } else {
+                break;
+            }
+        }
+
+        Student studentTwo = studentOne;//copies studentOne info
+        studentTwo.setName(input);//sets name but keeps courseList untouched
+
+        //print statements
+        cout << "--------------------------------" << endl;
+        cout << "student 2: " + studentTwo.getName() << endl;
+        cout << "number of courses: " << studentTwo.getNumCourses() << endl;
+        studentTwo.printCourses();
+
+
+        //*****third student*****//
+        cout << "enter third student's name: ";
+        getline(cin, input);
+
+        //makes sure user inputs something
+        while (true) {
+            if (input.empty()) {
+                cout << "please input a name: ";
+                getline(cin, input);
+            } else {
+                break;
+            }
+        }
+
+        Student studentThree = studentTwo;//copies studentOne info
+
+        //print statements
+        cout << "--------------------------------" << endl;
+        cout << "student 3: " + studentThree.getName() << endl;
+        cout << "number of courses: " << studentThree.getNumCourses() << endl;
+        studentThree.printCourses();
+
 
         loopProgram = false;
     }

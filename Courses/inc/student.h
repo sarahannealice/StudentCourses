@@ -23,6 +23,7 @@ public:
         name = "";
         numCourses = 0;
         courseList = new string[numCourses];
+        //cout << "default constructor called" << endl;
     }
 
     //copy constructor
@@ -31,6 +32,8 @@ public:
         numCourses = initialStudent.numCourses;
         courseList = new string[numCourses];
         copy(initialStudent.courseList, initialStudent.courseList + numCourses, courseList);
+
+        cout << "copy constructor called" << endl;
     }
 
     //destructor
@@ -43,28 +46,24 @@ public:
         } else {
             return;
         }
+
+        cout << "destructor called" << endl;
     }
+
 
     //setter & getter
-    void setName(string name) {
-        this->name = name;
-    }
+    void setName(string name) { this->name = name; }
+    string getName() { return this->name; }
+    void setNumCourses(int num) { this->numCourses = num; }
+    int getNumCourses() { return this->numCourses; }
 
-    string getName() {
-        return this->name;
-    }
 
-    void setNumCourses(int num) {
-        this->numCourses = num;
-    }
-
-    int getNumCourses() {
-        return this->numCourses;
-    }
-
+    //methods to be implemented in student.cpp
     void addCourse(string courseName);
 
     void printCourses() const;
+
+    Student& operator= (Student& initialStudent);
 
 };//end Student class
 
