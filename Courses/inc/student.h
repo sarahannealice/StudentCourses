@@ -63,7 +63,8 @@ public:
     void addCourse(string courseName);
     void printCourses() const;
     void courseReset();
-    Student& operator= (Student& initialStudent);
+    Student& operator= (const Student& initialStudent);
+    friend std::ostream& operator<< (std::ostream& stream, const Student& student);
 
 };//end Student class
 

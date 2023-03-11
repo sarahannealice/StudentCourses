@@ -13,7 +13,7 @@ void Student::addCourse(string course) {
     int maxCourses = 0;
     if (numCourses >= maxCourses){
         int tempMax = numCourses + 1;
-        string* temp = new string[tempMax]; //Creating an array that is one size larger than my current array
+        auto* temp = new string[tempMax]; //Creating an array that is one size larger than my current array
 
         copy(courseList, courseList + numCourses, temp); //Copying the contents of courseList into temp
 
@@ -52,23 +52,53 @@ void Student::addCourse(string course) {
 void Student::printCourses() const {
     cout << "student courses: " << endl;
 
+    //TODO Changed the check to .empty instead of ""
     //for loop to print dynamic array
     for (int i = 0; i < numCourses; i++) {
-        if (courseList[i] != "") {
+        if (!courseList[i].empty()) {
             cout << courseList[i] << endl;
         }
     }
 }//end printCourses method
 
+//TODO: Removed all instanced of print courses, replaced it with an overloaded chevron operator
+std::ostream& operator<<(ostream &stream, const Student &student) {
+    cout << "Chevron overload fired" << endl;
+    stream << "Student Name:" << student.name << endl;
+    stream << "Number of courses:" << student.numCourses << endl;
+    stream << "Courses: " << endl;
+    for (int i = 0; i < student.numCourses; i++){
+        stream << student.courseList[i] << endl;
+    }
+    return stream << endl;
+}
+
+//TODO: Added cout to indicate reset fired
 //method to reset courseNum and courseList to 0
 void Student::courseReset() {
     setNumCourses(0);
     delete []courseList;
     courseList = {};
+    cout << "reset fired" << endl;
 }
 
 //assignment operator -- https://www.geeksforgeeks.org/operator-overloading-cpp/
 //a method which overrides the '=' operator into copying a Student object completely
+//TODO: Replaced = operator to my own code, yours has a warning that it is not assigning properly. Compare our code and find the issue.
+Student& Student::operator=(const Student& student){
+    cout <<"Assignment overload fired" << endl;
+    //Self assignment catch - https://stackoverflow.com/a/12015213
+    if (this == &student){
+        return *this;
+    }
+    this->name = student.name;
+    this->numCourses = student.numCourses;
+    this->courseList = new string[student.numCourses];
+    copy(student.courseList, student.courseList + student.numCourses, this->courseList);
+
+    return *this;
+}
+/*
 Student& Student::operator=(Student &initialStudent) {
     name = initialStudent.name;
     numCourses = initialStudent.numCourses;
@@ -78,4 +108,4 @@ Student& Student::operator=(Student &initialStudent) {
     cout << "assignment operator called" << endl;
 
     return *this;
-}//end assignment operator method
+}//end assignment operator method*/
