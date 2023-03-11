@@ -9,8 +9,24 @@
 using namespace std;
 
 //resizes and adds new course to course list
-void Student::addCourse(string courseName) {
-    //check to see if first element in array
+void Student::addCourse(string course) {
+    int maxCourses = 0;
+    if (numCourses >= maxCourses){
+        int tempMax = numCourses + 1;
+        string* temp = new string[tempMax]; //Creating an array that is one size larger than my current array
+
+        copy(courseList, courseList + numCourses, temp); //Copying the contents of courseList into temp
+
+        delete[] courseList; //Removing the array to prevent a memory leak
+        courseList = temp; //Assigning courseList pointer to temp pointer
+        maxCourses = tempMax; //Updating the value of maxCourses to the new max value
+    }
+    courseList[numCourses] = std::move(course); //Assigning the course to the last indices
+    numCourses = numCourses + 1; //Updating count
+
+
+
+    /*//check to see if first element in array
     if (numCourses == 1) {
         courseList[0] = courseName;
         cout << numCourses << endl;
@@ -30,7 +46,7 @@ void Student::addCourse(string courseName) {
         delete []temp;//deletes values in temp array for next iteration of addCourse()
         //sets last element of dynamic array to most recent inputted course
         courseList[numCourses] = courseName;
-    }
+    }*/
 }//end addCourse method
 
 void Student::printCourses() const {
