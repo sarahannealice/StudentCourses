@@ -58,16 +58,16 @@ int main() {
             if (input == "q" || input == "Q") {
                 addCourse = false;
             } else {
-                studentOne.setNumCourses(numCourses += 1);//increments dynamic array
+                //TODO: Removed auto increment
+                //studentOne.setNumCourses(numCourses += 1);//increments dynamic array
                 studentOne.addCourse(input);
             }
         }//end addition to course array loop
 
+        //TODO Utilized the overloaded chevron operator on all the students
         //print statements
         cout << "--------------------------------" << endl;
-        cout << "student 1: " << studentOne.getName() << endl;
-        cout << "number of courses: " << studentOne.getNumCourses() << endl;
-        studentOne.printCourses();
+        cout << studentOne << endl;
 
 
         //*****second student*****//
@@ -88,15 +88,10 @@ int main() {
         studentTwo.setName(input);//sets name but keeps courseList untouched
 
         //print statements
-        cout << "--------------------------------" << endl;
-        cout << "student 2: " + studentTwo.getName() << endl;
-        cout << "number of courses: " << studentTwo.getNumCourses() << endl;
-        studentTwo.printCourses();
+        cout << studentTwo << endl;
 
-        cout << "student 1 after reset: " << studentOne.getName() << endl;
         studentOne.courseReset();
-        cout << "number of courses: " << studentOne.getNumCourses() << endl;
-        studentOne.printCourses();
+        cout << studentOne << endl;
 
 
         //*****third student*****//
@@ -113,13 +108,15 @@ int main() {
             }
         }//end name validation
 
-        Student studentThree = studentTwo;//copies studentOne info
+        //TODO: Assigning studentThree and making it equal studentTwo will utilize the copy function instead of the assignment function
+        //Split them up so it will fire the assignment function
+        Student studentThree;
+        studentThree = studentTwo;
+        //Student studentThree = studentTwo;//copies studentOne info
 
         //print statements
         cout << "--------------------------------" << endl;
-        cout << "student 3: " + studentThree.getName() << endl;
-        cout << "number of courses: " << studentThree.getNumCourses() << endl;
-        studentThree.printCourses();
+        cout << studentThree << endl;
 
 
         loopProgram = false;
