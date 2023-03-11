@@ -8,8 +8,9 @@
 
 using namespace std;
 
+//help from lorne
 //resizes and adds new course to course list
-void Student::addCourse(string course) {
+void Student::addCourse(string courseName) {
     int maxCourses = 0;
     if (numCourses >= maxCourses){
         int tempMax = numCourses + 1;
@@ -19,45 +20,25 @@ void Student::addCourse(string course) {
 
         delete[] courseList; //Removing the array to prevent a memory leak
         courseList = temp; //Assigning courseList pointer to temp pointer
-        maxCourses = tempMax; //Updating the value of maxCourses to the new max value
     }
-    courseList[numCourses] = std::move(course); //Assigning the course to the last indices
-    numCourses = numCourses + 1; //Updating count
 
-
-
-    /*//check to see if first element in array
-    if (numCourses == 1) {
-        courseList[0] = courseName;
-        cout << numCourses << endl;
-    } else {
-        cout << numCourses << endl;
-
-        //resizing dynamic array for potential additional course
-        string *temp = new string[numCourses + 1];//create temporary array with new size
-
-        //deep copy of array to temporary array
-        for (int i = 0; i < numCourses + 1; i++) {
-            temp[i] = courseList[i];
-        }
-
-        delete []courseList;//deletes values in courseList array
-        courseList = temp;//sets fresh courseList equal to temp array
-        delete []temp;//deletes values in temp array for next iteration of addCourse()
-        //sets last element of dynamic array to most recent inputted course
-        courseList[numCourses] = courseName;
-    }*/
+    //sets last element of dynamic array to most recent inputted course
+    //'move' used when something is soon destroyed -- https://stackoverflow.com/a/27026280
+    courseList[numCourses] = std::move(courseName); //Assigning the course to the last indices
+    numCourses += 1; //Updating count
 }//end addCourse method
 
-void Student::printCourses() const {
+void Student::printCourses() {
+    cout << "number of courses: " << getNumCourses() << endl;
     cout << "student courses: " << endl;
 
     //for loop to print dynamic array
     for (int i = 0; i < numCourses; i++) {
-        if (courseList[i] != "") {
-            cout << courseList[i] << endl;
+        if (!courseList[i].empty()) {
+            cout << "\t" << i+1 << ": " << courseList[i] << endl;
         }
     }
+    cout << endl;
 }//end printCourses method
 
 //method to reset courseNum and courseList to 0
@@ -67,15 +48,20 @@ void Student::courseReset() {
     courseList = {};
 }
 
+//help from lorne
 //assignment operator -- https://www.geeksforgeeks.org/operator-overloading-cpp/
 //a method which overrides the '=' operator into copying a Student object completely
-Student& Student::operator=(Student &initialStudent) {
-    name = initialStudent.name;
-    numCourses = initialStudent.numCourses;
+Student& Student::operator=(const Student& initialStudent) {
+    cout << "---assignment operator called---" << endl;
+    //self-check assignment is good practice -- https://stackoverflow.com/a/12015213
+    if (this == &initialStudent) {
+        return *this;
+    }
 
-    string *temp = new string[numCourses];
-    copy(initialStudent.courseList, initialStudent.courseList + initialStudent.numCourses, temp);
-    cout << "assignment operator called" << endl;
+    this->name = initialStudent.name;
+    this->numCourses = initialStudent.numCourses;
+    this->courseList = new string[numCourses];
+    copy(initialStudent.courseList, initialStudent.courseList + initialStudent.numCourses, this->courseList);
 
     return *this;
 }//end assignment operator method

@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "E:/Code/StudentCourses/Courses/src/main.cpp" "CMakeFiles/Courses.dir/src/main.cpp.obj" "gcc" "CMakeFiles/Courses.dir/src/main.cpp.obj.d"
-  "E:/Code/StudentCourses/Courses/src/student.cpp" "CMakeFiles/Courses.dir/src/student.cpp.obj" "gcc" "CMakeFiles/Courses.dir/src/student.cpp.obj.d"
+  "C:/Users/sarah/Desktop/sarah/nscc/winter2023/PROG2100/Assign2_StudentCourses/Courses/src/main.cpp" "CMakeFiles/Courses.dir/src/main.cpp.obj" "gcc" "CMakeFiles/Courses.dir/src/main.cpp.obj.d"
+  "C:/Users/sarah/Desktop/sarah/nscc/winter2023/PROG2100/Assign2_StudentCourses/Courses/src/student.cpp" "CMakeFiles/Courses.dir/src/student.cpp.obj" "gcc" "CMakeFiles/Courses.dir/src/student.cpp.obj.d"
   )
 
 # Targets to which this target links.

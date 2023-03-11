@@ -1,10 +1,9 @@
 //
 // Created by sarah on 15/02/2023.
-//received help from ewan and kaitlyn
+// received help from lorne, ewan and kaitlyn
 //
 
 #include <iostream>
-#include <cctype>
 
 #include "../inc/student.h"
 
@@ -15,7 +14,6 @@ int main() {
     string input;
     bool addCourse = true;
     bool loopProgram = true;
-    int numCourses = 0;
 
     while (loopProgram) {
         //taking user input
@@ -58,7 +56,6 @@ int main() {
             if (input == "q" || input == "Q") {
                 addCourse = false;
             } else {
-                studentOne.setNumCourses(numCourses += 1);//increments dynamic array
                 studentOne.addCourse(input);
             }
         }//end addition to course array loop
@@ -66,7 +63,6 @@ int main() {
         //print statements
         cout << "--------------------------------" << endl;
         cout << "student 1: " << studentOne.getName() << endl;
-        cout << "number of courses: " << studentOne.getNumCourses() << endl;
         studentOne.printCourses();
 
 
@@ -90,12 +86,10 @@ int main() {
         //print statements
         cout << "--------------------------------" << endl;
         cout << "student 2: " + studentTwo.getName() << endl;
-        cout << "number of courses: " << studentTwo.getNumCourses() << endl;
         studentTwo.printCourses();
 
         cout << "student 1 after reset: " << studentOne.getName() << endl;
         studentOne.courseReset();
-        cout << "number of courses: " << studentOne.getNumCourses() << endl;
         studentOne.printCourses();
 
 
@@ -113,12 +107,12 @@ int main() {
             }
         }//end name validation
 
-        Student studentThree = studentTwo;//copies studentOne info
+        Student studentThree;
+        studentThree = studentTwo;//copies studentOne info via assignment operator
 
         //print statements
         cout << "--------------------------------" << endl;
         cout << "student 3: " + studentThree.getName() << endl;
-        cout << "number of courses: " << studentThree.getNumCourses() << endl;
         studentThree.printCourses();
 
 
